@@ -555,7 +555,7 @@
 
 .about-pics {
   width: 50%;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   gap: 30px;
 }
@@ -563,20 +563,53 @@
 .left-card {
   display: flex;
   flex-direction: column;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   width: 40%;
   gap: 20px;
   align-items: end;
 }
 
-.left-pic {
+.left-picture {
   width: 55%;
-  border: 1px solid green;
   height: 70vh;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.left-pic {
+  width: 100%;
+  /* border: 1px solid green; */
+  height: 100%;
   border-radius: 10px;
   background-image: url(./Fleming-Images/about-style1-image-1.jpg);
   background-size: cover;
   filter: grayscale(100%);
+  position: relative;
+  transform: scale(1);
+  transition: 1s;
+}
+
+.left-pic:hover {
+  filter: grayscale(0%);
+  transform: scale(1.2);
+}
+
+.left-pic::after {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  left: 20;
+  transform: scale(0);
+  top: -20px;
+}
+
+.left-pic:hover::after {
+  transition: 2s;
+  transform: scale(2.5);
+  left: -100%;
 }
 
 .left-card button {
@@ -601,26 +634,98 @@
   gap: 20px;
   position: relative;
 }
+.right-pic-top {
+  /* border: 2px solid green; */
+}
 
-.right-pic-1 {
+.right-pic-1-div {
   width: 78%;
   height: 42vh;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.right-pic-1 {
+  width: 100%;
+  height:100%;
   border-radius: 10px;
   border: 1px solid #fca817;
   background-image: url(./Fleming-Images/about-style1-image-2.jpg);
   background-size: 100% 100%;
   filter: grayscale(100%);
   z-index: 1000;
+  position: relative;
+  overflow: hidden;
+  transform: scale(1);
+  transition: 1s;
+}
+
+.right-pic-top:hover .right-pic-1 {
+  transform: scale(1.2);
+  filter: grayscale(0%);
+}
+
+.right-pic-1::after {
+  content: "";
+  position: absolute;
+  height: 60%;
+  width: 50%;
+  left: 40;
+  top: 10%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+}
+
+.right-pic-top:hover .right-pic-1::after {
+  transform: scale(2.5);
+  transition: 2s;
+  left: -100%;
+  top: -30%;
+  /* transform: translate(-100px); */
+}
+
+.right-pic-2-div {
+  width: 98%;
+  height: 45vh;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .right-pic-2 {
-  width: 98%;
-  height: 45vh;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
   border: 1px solid #fca817;
   background-image: url(./Fleming-Images/about-style1-image-3.jpg);
   background-size: 100% 100%;
   filter: grayscale(100%);
+  position: relative;
+  transition: 1s;
+}
+
+  .right-pic-2:hover {
+    filter: grayscale(0%);
+    transform: scale(1.2);
+  }
+
+.right-pic-2::after {
+  content: '';
+  position: absolute;
+  height: 70%;
+  width: 50%;
+  border-radius: 50%;
+  left: 20%;
+  top: 5%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+}
+
+.right-pic-2:hover::after {
+  transform: scale(2.5);
+  left: -100%;
+  top: -70%;
+  transition: 2s;
 }
 
 .right-card img {
